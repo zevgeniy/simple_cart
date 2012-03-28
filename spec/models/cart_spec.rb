@@ -1,9 +1,13 @@
 require 'spec_helper'
 
-describe SimpleCart do
-  let(:cart)    {create(:cart)}
-  let(:product) {create(:product)}
-  let(:products) {[create(:product), create(:product), create(:product)]}
+describe SimpleCart::Cart do
+
+  let(:cart)      {create(:cart)}
+  let(:product)   {create(:product)}
+  let(:products)  {[create(:product), create(:product), create(:product)]}
+
+  it { should belong_to(:shopper) }
+  it { should have_many(:cart_items) }
 
   before do
     Product.acts_as_cartable

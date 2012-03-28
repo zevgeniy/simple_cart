@@ -7,7 +7,6 @@ feature "Cart", %q{
 } do
 
   scenario "Add product to cart" do
-    visit products_path
 
   end
 
