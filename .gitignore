@@ -1,0 +1,10 @@
+spec/dummy/log/*
+spec/dummy/tmp/*
+*.gem
+.bundle
+Gemfile.lock
+pkg/*
+.idea
+tmp
+.rvmrc
+log/*.log

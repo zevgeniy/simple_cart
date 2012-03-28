@@ -1,0 +1,21 @@
+<%= form_for @cart, url: simple_cart_cart_path do |f| %>
+  <table>
+    <tr>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Qty</th>
+      <th>Total</th>
+    </tr>
+    <%= f.fields_for :cart_items do |cart_item_form| %>
+      <%= render "simple_cart/cart_items/cart_item", cart_item_form: cart_item_form %>
+    <%- end %>
+    <tr>
+      <td colspan="2">&nbsp;</td>
+      <td colspan="2"><%= f.submit "Update" %></td>
+    </tr>
+    <tr>
+      <td colspan="3">&nbsp;</td>
+      <td>Total: <%= @cart.total %></td>
+    </tr>
+  </table>
+<%- end %>

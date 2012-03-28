@@ -1,0 +1,13 @@
+== Simple Cart
+
+A simple shopping cart for Rails.
+
+== Installation
+
+Run into console
+  rails g simple_cart:install
+
+== Views
+
+Run into console
+  rails g simple_cart:views
