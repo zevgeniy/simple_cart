@@ -67,7 +67,7 @@ module SimpleCart
     def add_item(cartable, quantity = 1)
       existing_cart_item = cart_items.by_cartable(cartable).first
       if existing_cart_item.blank?
-        cart_items.create!(cartable: cartable, price: cartable.cartable_price, quantity: quantity)
+        cart_items.create!(cartable: cartable, quantity: quantity)
       else
         existing_cart_item.quantity += quantity
         existing_cart_item.save!

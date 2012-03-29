@@ -14,10 +14,9 @@
 ActiveRecord::Schema.define(:version => 20120326091115) do
 
   create_table "cart_items", :force => true do |t|
-    t.integer  "cartable_type",                               :null => false
+    t.string  "cartable_type",                               :null => false
     t.integer  "cartable_id",                                 :null => false
     t.integer  "cart_id",                                     :null => false
-    t.decimal  "price",         :precision => 8, :scale => 2
     t.integer  "quantity"
     t.datetime "created_at",                                  :null => false
     t.datetime "updated_at",                                  :null => false

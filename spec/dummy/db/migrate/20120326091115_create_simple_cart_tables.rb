@@ -12,10 +12,9 @@ class CreateSimpleCartTables < ActiveRecord::Migration
     add_index :carts, :state
 
     create_table :cart_items do |t|
-      t.integer :cartable_type, :null => false
+      t.string :cartable_type, :null => false
       t.integer :cartable_id, :null => false
       t.integer :cart_id, :null => false
-      t.decimal :price, :precision => 8, :scale => 2
       t.integer :quantity
 
       t.timestamps

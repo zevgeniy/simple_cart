@@ -15,7 +15,6 @@ class CreateSimpleCartTables < ActiveRecord::Migration
       t.string  :cartable_type, :null => false
       t.integer :cartable_id, :null => false
       t.integer :cart_id, :null => false
-      t.decimal :price, :precision => 8, :scale => 2
       t.integer :quantity
 
       t.timestamps

@@ -11,7 +11,7 @@ module SimpleCart
     scope :by_cart, lambda {|cart| where({:cart_id => cart.id})}
 
     def total_price
-      price * quantity
+      self.cartable.cartable_price * quantity
     end
 
     protected
