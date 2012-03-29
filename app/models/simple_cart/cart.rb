@@ -82,5 +82,9 @@ module SimpleCart
     def empty?
       cart_items.blank?
     end
+
+    def count
+      cart_items.reload.map.sum(&:quantity)
+    end
   end
 end
