@@ -10,8 +10,6 @@ module SimpleCart
 
     module InstanceMethods
 
-      #extend ActiveSupport::Memoizable
-
       def self.included(base)
         base.send :helper_method, :current_cart
       end
@@ -21,7 +19,17 @@ module SimpleCart
         session[:cart_id] = cart.id
         cart
       end
-      #memoize :current_cart
+
+      def current_cart=(cart)
+        session[:cart_id] = cart.id
+        cart
+      end
+
+      def reset_current_cart
+        cart = Cart.create(:shopper => current_shopper)
+        session[:cart_id] = cart.id
+        cart
+      end
 
       def current_shopper
         self.respond_to?(SimpleCart.current_shopper_method) ? self.send(SimpleCart.current_shopper_method) : nil

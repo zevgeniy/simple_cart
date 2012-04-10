@@ -14,6 +14,10 @@ module SimpleCart
       self.cartable.cartable_price * quantity
     end
 
+    def to_s
+      self.cartable.cartable_title
+    end
+
     protected
 
     def check_quantity
