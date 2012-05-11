@@ -23,7 +23,7 @@ module SimpleCart
     end
   end
 
-  protected
+  private
 
   def find_cart_item
     @cart_item = current_cart.cart_items.find(params[:id])
